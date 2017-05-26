@@ -41,7 +41,7 @@ public class PolymorphismTest {
          * speak() message, we don't assume anything about the type of a--only that
          * it can speak(). Since it's actually AdmiralStockdale we get "gridlock!".
          */
-        assertThat( speaker.map(a->a.speak()).get(), is("gridlock!"));
+        assertThat( speaker.map(s->s.speak()).get(), is("gridlock!"));
     }
 
 }
