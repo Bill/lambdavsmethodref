@@ -10,9 +10,9 @@ class AdmiralStockdale implements Speaker {
     public String speak() {return "gridlock!";}
 }
 
-final Optional<Speaker> animal = Optional.of(new AdmiralStockdale());
+final Optional<Speaker> speaker = Optional.of(new AdmiralStockdale());
 
-System.out.println(animal.map(Speaker::speak).get());
+System.out.println(speaker.map(Speaker::speak).get());
 
 => "gridlock!"
 ```
@@ -26,7 +26,7 @@ name must be maintained.
 An alternative is to use lambda:
 
 ```java
-System.out.println(animal.map(animal.map(a->a.speak()).get()).get());
+System.out.println(speaker.map(s->s.speak()).get());
 
 => "gridlock!"
 ```
@@ -34,8 +34,8 @@ System.out.println(animal.map(animal.map(a->a.speak()).get()).get());
 At the point where we send the `speak()` message, we don't assume anything 
 about the type of a—only that it can `speak()`. That looks a lot like duck typing!
 
-The compiler takes care of figuring out if `a` (`animal`) can `speak()`. Later, if
+The compiler takes care of figuring out if `s` (`speaker`) can `speak()`. Later, if
 the class names, or class/interface hierarchy change, our mapping code is stable.
-Our type checker ensures compatibility.
+As with a method reference, our type checker ensures compatibility.
          
 Don't repeat yourself!
