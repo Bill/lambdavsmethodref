@@ -18,11 +18,11 @@ public class PolymorphismTest {
         public String speak() {return "gridlock!";}
     }
 
-    private Optional<Speaker> animal;
+    private Optional<Speaker> speaker;
 
     @Before
     public void setup() {
-        animal = Optional.of(new AdmiralStockdale());
+        speaker = Optional.of(new AdmiralStockdale());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class PolymorphismTest {
          * We don't know what kind of speaker we have so we use a reference to the
          * interface method. Since it's actually AdmiralStockdale we get "gridlock!".
          */
-        assertThat( animal.map(Speaker::speak).get(), is("gridlock!"));
+        assertThat( speaker.map(Speaker::speak).get(), is("gridlock!"));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class PolymorphismTest {
          * speak() message, we don't assume anything about the type of a--only that
          * it can speak(). Since it's actually AdmiralStockdale we get "gridlock!".
          */
-        assertThat( animal.map(a->a.speak()).get(), is("gridlock!"));
+        assertThat( speaker.map(a->a.speak()).get(), is("gridlock!"));
     }
 
 }
