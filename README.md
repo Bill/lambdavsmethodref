@@ -1,3 +1,5 @@
+Companion blog post on Memerocket: [Use Java Lambdas Instead of Method Refs Sometimes](http://memerocket.com/2017/05/27/java-use-lambdas-over-method-refs-sometimes)…
+
 When `map()`ing via Java streams or `Optional`, it's often convenient to use
 method references:
 
