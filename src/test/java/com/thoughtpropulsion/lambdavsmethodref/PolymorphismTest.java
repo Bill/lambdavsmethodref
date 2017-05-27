@@ -37,9 +37,9 @@ public class PolymorphismTest {
     @Test
     public void lambdaQuacksTest() {
         /*
-         * This looks a lot like duck typing to me. At the point where we send the
-         * speak() message, we don't assume anything about the type of s--only that
-         * it can speak(). Since it's actually AdmiralStockdale we get "gridlock!".
+         * At the point where we send the speak() message, we don't assume anything
+         * about the type of s--only that it can speak(). Since it's actually
+         * AdmiralStockdale we get "gridlock!".
          */
         assertThat( speaker.map(s->s.speak()).get(), is("gridlock!"));
     }
