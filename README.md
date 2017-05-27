@@ -32,7 +32,7 @@ System.out.println(speaker.map(s->s.speak()).get());
 ```
 
 At the point where we send the `speak()` message, we don't assume anything 
-about the type of a—only that it can `speak()`. That looks a lot like duck typing!
+about the type of a—only that it can `speak()`.
 
 The compiler takes care of figuring out if `s` (`speaker`) can `speak()`. Later, if
 the class names, or class/interface hierarchy change, our mapping code is stable.
